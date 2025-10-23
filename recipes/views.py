@@ -2,6 +2,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return render(request, 'recipes/index.html', context={
-        'name': 'global templates page',
-    })
+    return render(request, 'recipes/index.html')
