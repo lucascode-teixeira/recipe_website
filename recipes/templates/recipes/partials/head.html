@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/fontawesome.min.css" integrity="sha512-M5Kq4YVQrjg5c2wsZSn27Dkfm/2ALfxmun0vUE3mPiJyK53hQBHYCVAtvMYEC7ZXmYLg8DVG4tF8gD27WmDbsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/brands.min.css" integrity="sha512-WxpJXPm/Is1a/dzEdhdaoajpgizHQimaLGL/QqUIAjIihlQqlPQb1V9vkGs9+VzXD7rgI6O+UsSKl4u5K36Ydw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/solid.min.css" integrity="sha512-EHa6vH03/Ty92WahM0/tet1Qicl76zihDCkBnFhN3kFGQkC+mc86d7V+6y2ypiLbk3h0beZAGdUpzfMcb06cMg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
     <title>Recipes</title>
     <style>
         :root {
@@ -62,6 +65,11 @@
         body {
             font-size: 1.6rem;
             font-family: var(--font-primary);
+            background: var(--color-gray-1);
+            color: var(--color-dark-text);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-headings);
         }
         .main-header-container {
             background: var(--color-primary-dark);
@@ -70,6 +78,7 @@
         .container {
             max-width: 144rem;
             margin: 0 auto;
+            padding: var(--spacing-gutter-medium);
         }
         .main-logo {
             font-size: 4rem;
@@ -79,8 +88,74 @@
             flex-flow: row nowrap;
             align-items: center;
             justify-content: center;
-            background: red;
             width: fit-content;
+            margin: 0 auto;
+        }
+        .main-logo-icon {
+            margin-right: 1rem;
+        }
+        .search-form {
+            border: .2rem solid var(--color-primary-dark);
+            max-width: 64rem;
+            margin: 0 auto;
+            border-radius: .5rem;
+            position: relative;
+            transition: border-color 0.3s ease;
+        }
+        .search-input, .search-button {
+            border: none;
+            background: none;
+            outline: none;
+            padding: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        .search-input {
+            width: 100%;
+            padding-right: 3rem;
+        }
+        .search-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .search-button:focus {
+            outline: 1px solid var(--color-primary);
+            background: rgba(0, 0, 0, .05);
+        }
+        .search-form:focus-within {
+            border-color: var(--color-primary);
+            background: var(--color-white);
+        }
+        .search-form:focus-within .search-button {
+            color: var(--color-primary);
+        }
+        .main-content {
+            padding-top: 0;
+        }
+        .main-content-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+            gap: var(--spacing-gutter-large);
+        }
+        .recipe {
+            background: var(--color-white);
+            box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
+        }
+        .recipe img {
+            max-width: 100%;
+        }
+        .recipe-list-item {
+            max-width: 64rem;
+            transform: scale(1);
+            transform-origin: center center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .recipe-list-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+        .recipe-title-container {
+            padding: var(--spacing-gutter-medium);
         }
     </style>
 </head>
